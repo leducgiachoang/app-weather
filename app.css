@@ -1,0 +1,11 @@
+html{
+    background-color: darkcyan;
+}
+
+.box_caner{
+    width: 500px;
+    max-width: 100%;
+}
+.show_weather{
+    display: none;
+}
