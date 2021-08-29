@@ -1,11 +1,61 @@
 html{
-    background-color: darkcyan;
+    background: rgb(255,255,255);
+background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(227,227,255,1) 35%, rgba(195,245,255,1) 100%);
+}
+body{
+    background: none;
+    display: flex;
+    height: 100vh;
+    align-items: center;
 }
 
 .box_caner{
-    width: 500px;
-    max-width: 100%;
+    
 }
 .show_weather{
     display: none;
+}
+.header_weather_box{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    align-content: space-between;
+    flex-direction: row;
+}
+
+.box-main{
+    margin: 0 auto;
+    width: 500px;
+    max-width: 100%;
+}
+
+.box-input{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    align-content: space-around;
+}
+.box-input_1{
+    margin: 0 5px;
+    width: 100%;
+}
+.box-input_2{
+    width: 100%;
+    width: 100px;
+}
+
+#description {
+    text-transform: capitalize;
+}
+
+.card-body{
+    border: none !important;
+}
+
+#messenge_error{
+    display: none;
+}
+.table *{
+    border: none
 }

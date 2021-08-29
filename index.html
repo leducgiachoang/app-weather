@@ -4,27 +4,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link rel="stylesheet" href="app.css">
     <title>Weather</title>
 </head>
 <body>
 
-    <main class="position-absolute top-50 start-50 translate-middle">
+    <main class="box-main">
         <div class="card box_caner">
-            <div class="card-header">Thời tiết</div>
+            <div class="card-header bg-primary bg-gradient text-white">Thời tiết</div>
             <div class="card-body">
                 <div class="content text-center">
                     <div class="form-group">
-                        <div class="row">
-                            <div class="col-lg-9"><input type="address" class="form-control" placeholder="Nhập thành phố của bạn.." id="city_name"></div>
-                            <div class="col-lg-3"><button id="buttom_get_address" type="button" class="btn btn-info">Gửi</button></div>
+                        <div class="box-input">
+                            <div class="box-input_1"><input type="address" class="form-control" required placeholder="Nhập thành phố của bạn.." id="city_name"></div>
+                            <div class="box-input_2"><button id="buttom_get_address" type="button" class="btn btn-primary bg-gradient">Gửi <i id="loading_send" class="fas fa-spin"></i></button></div>
                         </div>
                     </div>
+
+                    <div id="messenge_error" class="alert alert-warning alert-danger fade show m-1 mt-2 p-2" role="alert">
+                        You should check in on some of those fields below.
+                    </div>
                     
-                    <h4 class="text-center">&</h4>
+                    <h5 class="text-center m-2"><i class="fas fa-sort"></i></h5>
                     <div class="d-grid gap-2">
-                        <button class="btn btn-primary" id="location" type="button">Lấy vị trí</button>
+                        <button class="btn btn-primary " id="location" type="button">Thời tiết tại đây <b id="loading_click" class="fas fa-spin"></b></button>
                     </div>
                 </div>
                
@@ -34,7 +39,20 @@
 
 
         <div class="card show_weather">
-            <div class="card-header">Thời tiết hiện tại của: <b id="name_location"></b></div>
+            <div class="card-header bg-primary bg-gradient text-white">
+                <div class="header_weather_box">
+                    <div>
+                        <button type="button" id="buttom_left" class="rounded-circle btn btn-outline-light">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                    </div>
+                    <div>
+                        Thời tiết hiện tại của: <b id="name_location"></b>
+                    </div>
+                </div>
+                
+                
+            </div>
             <div class="card-body">
                 <div class="content text-center">
                     <img id="icon_weather" width="120" src="" alt="">
